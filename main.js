@@ -36,6 +36,7 @@ app.post('/' ,(req, res) => {
     res.render('index')
   } else {
     res.render('login')
+    
   }
 })
 
@@ -50,5 +51,5 @@ app.get('/' , (req, res) => {
 
 // servidor iniciado
 app.listen(port, () => {
-  console.log('servidor rodando!')
+  console.log('servidor rodando em localhost:' + port)
 })
