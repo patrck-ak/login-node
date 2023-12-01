@@ -16,19 +16,27 @@
   <form method="post">
     <div class="limiter">
       <span class="row">
-        <input type="text" name="user" id="user" placeholder="User ID" class="userinput">
+        <input type="text" name="user" id="user" placeholder="User ID" class="">
       </span>
 
       <span class="row">
-        <input type="password" name="password" id="password" placeholder="Password" class="mt-3 passwordinput">
-      
+        <input type="password" name="password" id="password" placeholder="Password" class="mt-2 ">
       </span>
-      <span class="row"><button name="button" class="mt-5 btn btn-dark" type="submit">Enviar</button>
+
+      <span class="input-group mt-2 center">
+        <input class="form-check-input" type="checkbox" name="checkbox" value="true"  id="checkbox">
+        <label class="text-white" for="checkbox">&nbsp;&nbsp;Save Session</label>
+      </span>
+
+      <span class="row">
+        <button name="button" class="mt-4 btn btn-dark" type="submit">Enviar</button>
       </span>
     </div>
   </form>
 
   <style>
+
+    
     * {
       outline: none;
     }
@@ -42,6 +50,27 @@
       top: 30vh;
       left: 43vw;
     }
-  </style>
+    
+    input {
+      padding: 0.2em;
+      background: #f4f4f4;
+      border: #1f1f1f solid 3px;
+      border-radius: 5px;
+    } input:hover {
+      transition: .3s ease-in-out;
+      border: #9b4646 solid 3px;
+    }
+    
+    input {
+      outline: none;
+    } .btn-dark:hover{
+      background: #9b4646;
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+    }
+    </style>
 
 </body>

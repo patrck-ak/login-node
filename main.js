@@ -30,12 +30,18 @@ app.set("views", path.join(__dirname, "/views"));
 app.post("/", (req, res) => { 
   let useript = req.body.user;
   let passwordipt = req.body.password;
+  let check = req.body.checkbox;
+  console.log(check)
 
   if (data.user == useript && data.password == passwordipt) {
-    req.session.login = useript;
-    res.render("index");
+    // verifica se o checkbox está marcado
+    if (check == 'true') { 
+      req.session.login = useript; // caso esteja, cria o cookie da sessão
+      console.log('sessão mantida.')
+    }
+    res.render("index"); // e envia para a página principal
     console.log("usuario válido: " + useript + " " + passwordipt);
-  } else {
+  } else { // caso contrario volta para a página de login
     res.render("login");
     console.log("usuario inválido: " + useript + " " + passwordipt);
   }
