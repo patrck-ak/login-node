@@ -1,4 +1,5 @@
 {
-  "user": "admin",
-  "password": "1234"
+  "user": "Patrick",
+  "password": "1234" ,
+  "permission-level": "admin"
 }

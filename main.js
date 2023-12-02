@@ -5,7 +5,7 @@ const data = JSON.parse(JSON.stringify(json));
 // importa o express & session
 const express = require("express");
 const session = require("express-session");
-
+ 
 
 const bodyParser = require("body-parser");
 
@@ -14,8 +14,8 @@ const path = require("path");
 const { log } = require("console");
 const app = express();
 
-// parametro chave que vai ser gerada para cada sessão logad
-app.use(session({ secret: "d9dsa8dyas7yd7asyda7syd7asdas7" }));
+// parametro chave que vai ser gerada para cada sessão logado
+app.use(session({ secret: "0D9SAID90ASIDA90" }));
 
 // recuperação dos dados via bodyparser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -31,7 +31,6 @@ app.post("/", (req, res) => {
   let useript = req.body.user;
   let passwordipt = req.body.password;
   let check = req.body.checkbox;
-  console.log(check)
 
   if (data.user == useript && data.password == passwordipt) {
     // verifica se o checkbox está marcado
@@ -56,6 +55,10 @@ app.get("/", (req, res) => {
     res.render("login");
   }
 });
+
+function logout() {
+  session.login()
+}
 
 // servidor iniciado
 app.listen(port, () => {
